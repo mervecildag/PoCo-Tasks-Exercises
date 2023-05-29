@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.sticky {
+    display:grid;
+}
+
+nav {
+    height: 100%;
+    background-color: antiquewhite;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li{
+    padding-right: 25%;
+}
+
+section {
+    margin-top: 25px 25px;
+    text-align: center;
+}
+
+h1{
+    color: burlywood;
+}
+
+button {
+    border: 1px solid burlywood;
+    height: 30px;
+}
+
+button:hover {
+    color: white;;
+    background-color: burlywood;
+}
+
+footer {
+    height: 50px;
+    background-color: antiquewhite;
+    position: sticky;
+    bottom: 0;
+}

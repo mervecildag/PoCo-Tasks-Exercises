@@ -1,0 +1,130 @@
+-Visualize-
+1. Walkingspeed : 1 min F, 2 min M, 4 min S, 5 min D
+2. 1 torch = for max. 12. min
+3. max 2 people through the tunnel
+
+-Plan and divide-
+--- Time is limited.
+We can choose the fastest and slowest people together to reduce the time.
+
+-Pseudo code-
+Initialize maxTime as 12;
+Initialize totalTime as 0;
+Initialize maxPeople as 2;
+Initialize PeopleAtStart as 4;
+
+Select 2FastestPeople;
+Select 2SlowestPeople;
+
+ControlStep: is only working if we call it.
+  IF NOT totalTime <= maxTime and NumberofPeople <= maxPeople
+    Print "Failure. Try again."
+  ELSE
+    IF PeopleAtStart != 0
+    Go next Step  
+  END IF
+ 
+
+ STEP 1
+    Go 2FastestPeople 
+    ADD totalTime = totalTime + Speed of 2FastestPeople
+    SET PeopleAtStart = PeopleAtStart - 2FastestPeople
+    Call ControlStep
+
+STEP 2 
+    the fastest is going to back 
+    ADD totalTime = totalTime + Speed of the fastest people
+    SET PeopleAtStart =  PeopleAtStart + 
+    Call ControlStep
+
+STEP 3
+    Go 2SlowestPeople
+    ADD totalTime = totalTime + Speed of the  2SlowestPeople
+    SET NumberofPeople = Number of people in 2SlowestPeople
+
+STEP 4
+    Back the fastest people 
+    ADD totalTime = totalTime + Speed of the  fastest people
+    SET NumberofPeople = Number of people in fastest people
+
+STEP 5
+    Go 2FastestPeople
+    ADD totalTime = totalTime + Speed of the  2FastestPeople
+    SET NumberofPeople = Number of people in 2FastestPeople
+
+STEP 6
+If total time <= maxTime and PeopleAtStart = 0 print "SUCCESS. You rule !"
+ELSE print "FAILED. Try again !"
+--------------------------------------
+
+
+
+
+//////////////////////////////////////////////////////////////////////
+--- Darkness phoebia ---
+One family wants to get through a tunnel. Dad can make it in 1 minute, mama in 2 minutes, son in 4 and daughter in 5 minutes. Unfortunately, not more than two persons can go through the narrow tunnel at one time, moving at the speed of the slower one.
+Can they all make it to the other side if they have a torch that lasts only 12 minutes and they are afraid of the dark?
+--- Limits ---
+1. Walkingspeed : 1 min F, 2 min M, 4 min S, 5 min D
+2. 1 torch = for max. 12. min
+3. max 2 people through the tunnel
+Solution Way and Why
+--- Time is limited.
+We can choose the fastest and slowest people together to reduce time.
+Pseudo:
+Initialize maxTime as 12;
+Initialize totalTime as 0;
+Initialize NumberofPeople;
+Initialize maxPeople as 2;
+Initialize peopleAtStart as 4;
+Select the 2FastestPeople (times)
+Select the 2SlowestPeople (times)
+*ControlStep: is only working if we call it.
+  IF NOT totalTime > maxTime and NumberofPeople > maxPeople
+    Print "Failure. Try again."
+  ELSE
+     IF peopleAtStart:
+      GO next step
+     ELSE
+      Print 'You succeed'
+     END IF
+  END IF
+Step1: Go 2FastestPeople
+  ADD totalTime = totalTime + Speed of 2FastestPeople
+  SET NumberofPeople = Number of people in 2FastestPeople
+  UPDATE peopleAtStart = peopleAtStart - NumberofPeople
+  Call ControlStep
+Step2: Back fastest person
+  ADD totalTime = totalTime + Speed of fastest person
+  SET NumberofPeople = 1 fastest person
+  UPDATE peopleAtStart = peopleAtStart + NumberofPeople
+  Call ControlStep
+Step3: Go 2SlowestPeople // slowest people together
+  ADD totalTime = totalTime + Speed of slowest person
+  SET NumberofPeople = Number of people in 2SlowestPeople
+  UPDATE peopleAtStart = peopleAtStart - NumberofPeople
+  Call ControlStep
+Step4: Back fastest person end of the thunnel
+  ADD totalTime = totalTime + fastest person end of the thunnel
+  SET NumberofPeople = 1 fastest person
+  UPDATE peopleAtStart = peopleAtStart + NumberofPeople
+  Call ControlStep
+Step5: Go 2FastestPeople
+  ADD totalTime = totalTime + two fastest people
+  SET NumberofPeople = Number of people in 2FastestPeople
+  UPDATE peopleAtStart = peopleAtStart - NumberofPeople
+  Call ControlStep
+IF Total <= maxTime
+    Print "Success. You rule!"
+ELSE
+    Print "Failure. Try again."
+END IF
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+html{
+    background-color: lightblue;
+    background-image: url("https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/worcestershire-herefordshire/places/clent-hills/library/autumn/beech-tree-clent-hills-worcestershire-1591489.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-clip: content-box;
+    background-attachment: fixed;
+}
+
+
+section{
+    font-size: 1rem;
+}
+.one{
+    font-size: 3rem;
+}
+.two{
+    font-size: 4rem;
+}
+.three{
+    font-size: 5rem;
+}
+.four{
+    font-size: 6rem;
+}
